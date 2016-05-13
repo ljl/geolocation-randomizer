@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>geolocation-randomizer</h1>
+        <p>Generates random geolocations for you</p>
+        <h2>Usage</h2>
+        <div class="usage">
+            <div>
+                METHOD: post
+            </div>
+            <div>PATH: /api</div>
+            <div>BODY:</div>
+            <pre>
+            {
+            "lat": 59.2,
+            "long": 10.1,
+            "radius": 10,
+            "count": 10
+            }
+          </pre>
+        </div>
+        <div class="usage">
+            <div>
+                METHOD: get
+            </div>
+            <div>PATH: /</div>
+            <a href="/api/59.2/10.1/10/10">/api/59.2/10.1/10/10</a>
+        </div>
+
+    </div>
+</body>
+
+</html>
