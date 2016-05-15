@@ -6,7 +6,7 @@ var app = express();
 app.use('/', express.static('static'));
 app.use(bodyParser.json());
 
-app.get('/api/:lat/:long/:radius/:count', function (req, res) {
+app.get('/api/area/:lat/:long/:radius/:count', (req, res) => {
   var lat = req.params.lat;
   var long = req.params.long;
   var radius = req.params.radius;
@@ -18,7 +18,25 @@ app.get('/api/:lat/:long/:radius/:count', function (req, res) {
   }, radius, count));
 });
 
-app.post('/api', function (req, res) {
+app.get('/api/random', (req, res) => {
+  res.send({
+    'lat': geo.random(),
+    'lng': geo.random()
+  })
+});
+
+app.get('/api/random/:count', (req, res) => {
+  var points = [];
+  for (var i = 0; i < req.params.count; i++) {
+    points.push({
+      'lat': geo.random(),
+      'lng': geo.random()
+    });
+  }
+  res.send(points);
+})
+
+app.post('/api/area', (req, res) => {
   var lat = req.body.lat;
   var long = req.body.long;
   var radius = req.body.radius;

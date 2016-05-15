@@ -3,7 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,27 +11,47 @@
         <h1>geolocation-randomizer</h1>
         <p>Generates random geolocations for you</p>
         <h2>Usage</h2>
+        <h3>Get random locations around an area</h3>
         <div class="usage">
             <div>
-                METHOD: post
+                Method: <strong>POST</strong>
             </div>
-            <div>PATH: /api</div>
-            <div>BODY:</div>
+            <div>Path: <strong>/api/area</strong></div>
+            <div>Body:</div>
             <pre>
-            {
-            "lat": 59.2,
-            "long": 10.1,
-            "radius": 10,
-            "count": 10
-            }
+{
+  "lat": 59.2,
+  "long": 10.1,
+  "radius": 10,
+  "count": 10
+}
           </pre>
         </div>
         <div class="usage">
             <div>
-                METHOD: get
+                Method: <strong>GET</strong>
             </div>
-            <div>PATH: /</div>
-            <a href="/api/59.2/10.1/10/10">/api/59.2/10.1/10/10</a>
+            <div>Path:
+              <a href="/api/area/59.2/10.1/10/10">/area/api/59.2/10.1/10/10</a>
+            </div>
+        </div>
+        <h3>Get a single random location</h3>
+        <div class="usage">
+          <div>
+              Method: <strong>GET</strong>
+          </div>
+            <div>Path:
+              <a href="/api/random">/api/random</a>
+            </div>
+        </div>
+        <h3>Get 100 random locations</h3>
+        <div class="usage">
+          <div>
+              Method: <strong>GET</strong>
+          </div>
+            <div>Path:
+              <a href="/api/random/100">/api/random/100</a>
+            </div>
         </div>
 
     </div>

@@ -47,4 +47,9 @@ function generateRandomPoint(center, radius) {
   };
 }
 
+function generateRandomStartingPoint() {
+  return Math.random() * (90 - -90) + -90;
+}
+
+exports.random = generateRandomStartingPoint;
 exports.generate = generateRandomPoints;
